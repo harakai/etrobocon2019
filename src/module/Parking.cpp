@@ -6,12 +6,15 @@
  */
 #include "Parking.h"
 
-Parking::Parking(Controller& controller_, int targetBrightness_) : controller(controller_), targetBrightness(targetBrightness_) {}
+Parking::Parking(Controller& controller_, int targetBrightness_)
+  : controller(controller_),
+    navigator(controller_, targetBrightness_),
+    targetBrightness(targetBrightness_)
+{
+}
 
 void Parking::parkAtAL()
 {
-  Navigator navigator(controller, targetBrightness);
-
   navigator.moveToSpecifiedColor(Color::green, 10);
   navigator.move(100, 10, 0.813);
   navigator.spin(10.0, false);
@@ -25,8 +28,6 @@ void Parking::parkAtAL()
 
 void Parking::parkAtAR()
 {
-  Navigator navigator(controller, targetBrightness);
-
   navigator.moveToSpecifiedColor(Color::blue, 10);
   navigator.move(250, 10, 0.813);
   navigator.spin(40, false);

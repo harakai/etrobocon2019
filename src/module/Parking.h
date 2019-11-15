@@ -12,6 +12,7 @@
 class Parking {
  private:
   Controller controller;
+  Navigator navigator;
   const int targetBrightness;
 
   /**

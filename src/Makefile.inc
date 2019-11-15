@@ -19,8 +19,7 @@ APPL_CXXOBJS += \
     Parking.o \
     Instructions.o \
     MoveDirectGarage.o \
-    Curvature.o \
-    MoveGarage.o
+    Curvature.o 
 
 SRCLANG := c++
 
