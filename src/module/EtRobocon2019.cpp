@@ -38,16 +38,20 @@ void EtRobocon2019::start()
   //直接ガレージに移動する
   MoveDirectGarage moveDirectGarage(controller, targetBrightness);
   if(isLeftCourse) {
+    controller.speakerPlayToneFS6(300);
     moveDirectGarage.moveDirectGarageL();
   } else {
+    controller.speakerPlayToneFS6(300);
     moveDirectGarage.moveDirectGarageR();  // Rコースの場合はビンゴを行わずにガレージ駐車を行う
   }
 
   // ガレージ
   Parking parking(controller, targetBrightness);
   if(isLeftCourse) {
+    controller.speakerPlayToneFS6(300);
     parking.parkAtAL();
   } else {
+    controller.speakerPlayToneFS6(300);
     parking.parkAtAR();
   }
 }
