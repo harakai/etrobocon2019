@@ -38,7 +38,7 @@ void EtRobocon2019::start()
   //直接ガレージに移動する
   MoveDirectGarage moveDirectGarage(controller, targetBrightness);
   if(isLeftCourse) {
-    //ブロックビンゴを実行する処理を記述
+    moveDirectGarage.moveDirectGarageL();
   } else {
     moveDirectGarage.moveDirectGarageR();  // Rコースの場合はビンゴを行わずにガレージ駐車を行う
   }
