@@ -28,13 +28,13 @@ void Parking::parkAtAL()
 
 void Parking::parkAtAR()
 {
-  navigator.moveToSpecifiedColor(Color::blue, 10);
-  navigator.move(250, 10, 0.813);
-  navigator.spin(40, false);
-  navigator.moveToSpecifiedColor(Color::black, 10);
-  navigator.move(40, 10, 0.813);
-  navigator.spin(45, true);
-  navigator.moveToSpecifiedColor(Color::blue, 10);
+  // navigator.moveToSpecifiedColor(Color::blue, 10);
+  navigator.move(250, 10, 0.813);                               // 250mm直進
+  navigator.spin(60, false);                                    // 60度左回転
+  navigator.moveToSpecifiedColor(Color::black, 10);             // 黒詠むまで走る
+  navigator.move(40, 10, 0.813);                                // 40mm前進
+  navigator.spin(70, true);                                     // 70度右回転
+  navigator.lineTraceToSpecifiedColor(Color::blue, 10, false);  // ライントレースしながら青
   navigator.move(130, 10, 0.813);
   navigator.spin(90, false);
   navigator.move(400, 10, 0.813);

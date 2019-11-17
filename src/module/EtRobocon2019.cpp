@@ -24,26 +24,26 @@ void EtRobocon2019::start()
   while(!controller.touchSensor.isPressed()) {
     controller.tslpTsk(4);
   }
-  Bluetooth::is_start = true;
+  // Bluetooth::is_start = true;
 
-  NormalCourse normalCourse(controller, isLeftCourse, targetBrightness);
-  // NormalCourseを走り出す．
-  normalCourse.runNormalCourse();
+  // NormalCourse normalCourse(controller, isLeftCourse, targetBrightness);
+  // // NormalCourseを走り出す．
+  // normalCourse.runNormalCourse();
 
-  // ブロックビンゴ
-  BlockBingo blockBingo(controller, targetBrightness);
-  // ここでビンゴを開始するblockBingoのメンバ関数を呼び出す
-  blockBingo.execOrder<256>(Bluetooth::commands);
+  // // ブロックビンゴ
+  // BlockBingo blockBingo(controller, targetBrightness);
+  // // ここでビンゴを開始するblockBingoのメンバ関数を呼び出す
+  // blockBingo.execOrder<256>(Bluetooth::commands);
 
   //直接ガレージに移動する
-  MoveDirectGarage moveDirectGarage(controller, targetBrightness);
-  if(isLeftCourse) {
-    controller.speakerPlayToneFS6(300);
-    moveDirectGarage.moveDirectGarageL();
-  } else {
-    controller.speakerPlayToneFS6(300);
-    moveDirectGarage.moveDirectGarageR();  // Rコースの場合はビンゴを行わずにガレージ駐車を行う
-  }
+  // MoveDirectGarage moveDirectGarage(controller, targetBrightness);
+  // if(isLeftCourse) {
+  //   controller.speakerPlayToneFS6(300);
+  //   moveDirectGarage.moveDirectGarageL();
+  // } else {
+  //   controller.speakerPlayToneFS6(300);
+  //   moveDirectGarage.moveDirectGarageR();  // Rコースの場合はビンゴを行わずにガレージ駐車を行う
+  // }
 
   // ガレージ
   Parking parking(controller, targetBrightness);
